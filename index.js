@@ -32,13 +32,8 @@ app.use(express.json()); // For parsing JSON bodies
 // Send notification via FCM
 const sendMessage = async (message) => {
   try {
-      const response = await admin.messaging().send(message)
-        .then(response => {
-          console.log('Successfully sent message:', response);
-        })
-        .catch(error => {
-          console.error('Error sending message:', error);
-        });
+    const response = await admin.messaging().send(message);
+    console.log("Successfully sent message");
     return response;
   } catch (error) {
     console.error('Error sending message:', error);
