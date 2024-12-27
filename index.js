@@ -33,10 +33,8 @@ app.use(express.json()); // For parsing JSON bodies
 const sendMessage = async (message) => {
   try {
     const response = await admin.messaging().send(message);
-    console.log("Successfully sent message");
     return response;
   } catch (error) {
-    console.error('Error sending message:', error);
     throw error;
   }
 };
